@@ -14,6 +14,10 @@ function histo_dynamique(item) {
     .attr("transform",
       "translate(" + margin.left + "," + margin.top + ")");
 
+  svg_dyna.append("text").attr("transform", "translate(" + (width / 2) + " ," +(height/2 - 200) + ")")
+    .style("font-size", "16px")
+    .style("text-anchor", "middle")
+    .text("Match by race of partner")
 
   // get the data
   d3.csv("static/parfait/data/SpeedDating.csv", function (data) {
@@ -30,7 +34,7 @@ function histo_dynamique(item) {
     svg_dyna.append("text")
       .attr("transform",
         "translate(" + (width / 2) + " ," +
-        (height + margin.top + 20) + ")")
+        (height/2 + 160) + ")")
       .style("text-anchor", "middle")
       .text("Race code of partner");
 

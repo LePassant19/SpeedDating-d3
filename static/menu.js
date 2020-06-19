@@ -7,8 +7,8 @@ var treeData =
 			"children":[
 				{
 				  "name": "Race",
-          //"action": "bar_race.js"
-          "action": "histo_dynamique.js"
+          "action": "bar_race.js"
+          //"action": "histo_dynamique.js"
 				},
 				{
 				  "name": "Qualities",
@@ -28,14 +28,23 @@ var treeData =
 				}
 			]
 		},
+    {
+      "name": "Match",
+      "children":[
         {
-          "name": "Match",
-          "action": "bar_match.js"
+          "name": "Race of partner",
+          "action": "histo_dynamique.js"
         },
         {
-          "name": "Reasons",
-          "action": "pie_motif.js"
-        }
+          "name": "Gender",
+          "action": "bar_match.js"
+        }]
+      
+    },
+    {
+      "name": "Reasons",
+      "action": "pie_motif.js"
+    }
       ]
     }
 

@@ -1,12 +1,14 @@
 function pie_chart(item){
-	var margin = {top: 10, right: 30, bottom: 30, left: 60},
+	var margin = {top: 100, right: 30, bottom: 30, left: 60},
       width = 450,
-    height = 450;
+    height = 550;
 
 
 // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
 //var radius = Math.min(width, height) / 2 - margin;
 var radius = Math.min(width, height) / 2
+
+
 
 // create 2 data_set;
 var data5 ={"Seemed like a fun night out":1739,"To meet new people":1365,"To get a date":434,"Looking for a serious relationship":172,"To say I did it":234,"Other":230};
@@ -18,7 +20,13 @@ var svg_motif = d3.select(item)
     .attr("width", width)
     .attr("height", height)
   .append("g")
-    .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+    .attr("transform", "translate(225,300)");
+
+
+svg_motif.append("text").attr("x", 0).attr("y", -250).style("font-size", "16px")
+    .attr("text-anchor", "middle")
+    .text("Reasons for participating in speed dating")
+
 
 // 1. Create the button
   var button = document.createElement("button");
@@ -57,9 +65,40 @@ function update3(data) {
     .sort(function(a, b) { return d3.ascending(a.key, b.key);} ) ;// This make sure that group order remains the same in the pie chart
   var data_ready = pie(d3.entries(data));
 
+  var tooltip = d3.select(item)
+    .append("div")
+    .style("opacity", 0)
+    .attr("class", "tooltip")
+    .style("background-color", "white")
+    .style("border", "solid")
+    .style("border-width", "1px")
+    .style("border-radius", "5px")
+    .style("padding", "10px")
+
+  // Three function that change the tooltip when user hover / move / leave a cell
+  var mouseover = function(d) {
+    tooltip
+        .html("<b>Reason: </b>" + d.data.key + "<br>" + "<b>Count: </b>" + d.data.value)
+        .style("opacity", 1)
+        .style("left", (event.pageX)+"px")   
+        .style("top", (event.pageY)+"px")
+
+  }
+  var mousemove = function(d) {
+    tooltip
+      .style("left", (d3.mouse(this)[0]+90) + "px") // It is important to put the +90: other wise the tooltip is exactly where the point is an it creates a weird effect
+      .style("top", (d3.mouse(this)[1]) + "px")
+  }
+  var mouseleave = function(d) {
+    tooltip
+      .style("opacity", 0)
+  }
   // map to data
   var u = svg_motif.selectAll("path")
-    .data(data_ready);
+    .data(data_ready)
+    .on("mouseover", mouseover)
+    .on("mousemove", mousemove)
+    .on("mouseleave", mouseleave);
 
   // Build the pie chart: Basically, each part of the pie is a path that we build using the arc function.
   u
@@ -78,14 +117,14 @@ function update3(data) {
     .style("opacity", 1);
 
 
-  u
+  /**u
     .enter()
     .append('text')
     .transition()
     .text(function(d){ return d.data.key})
     .attr("transform", function(d) { return "translate(" +  d3.arc().innerRadius(0).outerRadius(radius).centroid(d) + ")rotate(-80)";  })
     .style("text-anchor", "middle")
-    .style("font-size", 17);
+    .style("font-size", 17);**/
   // remove the group that is not present anymore
   u
     .exit()
