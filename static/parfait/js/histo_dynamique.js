@@ -92,7 +92,7 @@ function histo_dynamique(item) {
 
     }
 
-    d3.select("#svg_dyna").append("div").text("<center>Test</center>");
+    //d3.select("#svg_dyna").append("div").text("<center>Test</center>");
     //d3.select("#svg_dyna").append("div").html("<label>Choose race</label>").html("<input type='number' min='1' max='6' step='1' value='2' id='nBin'>");
 
 

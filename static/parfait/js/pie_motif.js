@@ -1,10 +1,16 @@
 function pie_chart(item){
-	var width = 450;
+	var margin = {top: 10, right: 30, bottom: 30, left: 60},
+      width = 450,
     height = 450;
-    margin = 40;
+
 
 // The radius of the pieplot is half the width or half the height (smallest one). I subtract a bit of margin.
-var radius = Math.min(width, height) / 2 - margin;
+//var radius = Math.min(width, height) / 2 - margin;
+var radius = Math.min(width, height) / 2
+
+// create 2 data_set;
+var data5 ={"Seemed like a fun night out":1739,"To meet new people":1365,"To get a date":434,"Looking for a serious relationship":172,"To say I did it":234,"Other":230};
+var data6 ={"Seemed like a fun night out":1687,"To meet new people":1647,"To get a date":197,"Looking for a serious relationship":129,"To say I did it":276,"Other":189};
 
 // append the svg object to the div called 'my_dataviz'
 var svg_motif = d3.select(item)
@@ -14,10 +20,27 @@ var svg_motif = d3.select(item)
   .append("g")
     .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
 
-// create 2 data_set;
-var data5 ={"Seemed like a fun night out":1739,"To meet new people":1365,"To get a date":434,"Looking for a serious relationship":172,"To say I did it":234,"Other":230};
-var data6 ={"Seemed like a fun night out":1687,"To meet new people":1647,"To get a date":197,"Looking for a serious relationship":129,"To say I did it":276,"Other":189};
-
+// 1. Create the button
+  var button = document.createElement("button");
+  button.innerHTML = "Men";
+  // 2. Append somewhere
+  var body = document.getElementById("graphDiv2");
+  body.appendChild(button);
+  
+  button.addEventListener ("click", function() {
+    update3(data5);
+  });
+  
+  // 1. Create the button
+  var button = document.createElement("button");
+  button.innerHTML = "Women";
+  // 2. Append somewhere
+  var body = document.getElementById("graphDiv2");
+  body.appendChild(button);
+  
+  button.addEventListener ("click", function() {
+    update3(data6);
+  });
 // set the color scale
 var color = d3.scaleOrdinal()
   .domain(data5)

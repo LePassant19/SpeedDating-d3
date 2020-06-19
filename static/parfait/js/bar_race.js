@@ -41,6 +41,28 @@ var svg_race =body
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
+// 1. Create the button
+  var button = document.createElement("button");
+  button.innerHTML = "Men";
+  // 2. Append somewhere
+  var body = document.getElementById("graphDiv2");
+  body.appendChild(button);
+  
+  button.addEventListener ("click", function() {
+    update1(data1);
+  });
+  
+  // 1. Create the button
+  var button = document.createElement("button");
+  button.innerHTML = "Women";
+  // 2. Append somewhere
+  var body = document.getElementById("graphDiv2");
+  body.appendChild(button);
+  
+  button.addEventListener ("click", function() {
+    update1(data2);
+  });
+
 // X axis
 var x = d3.scaleBand()
   .range([ 0, width ])

@@ -17,6 +17,27 @@ var svg_age = body
     .attr("transform",
           "translate(" + margin.left + "," + margin.top + ")");
 
+// 1. Create the button
+  var button = document.createElement("button");
+  button.innerHTML = "Men";
+  // 2. Append somewhere
+  var body = document.getElementById("graphDiv2");
+  body.appendChild(button);
+  
+  button.addEventListener ("click", function() {
+    update2(data3);
+  });
+  
+  // 1. Create the button
+  var button = document.createElement("button");
+  button.innerHTML = "Women";
+  // 2. Append somewhere
+  var body = document.getElementById("graphDiv2");
+  body.appendChild(button);
+  
+  button.addEventListener ("click", function() {
+    update2(data4);
+  });
 // X axis
 var x = d3.scaleBand()
   .range([ 0, width ])
@@ -43,7 +64,7 @@ svg_age.append("g")
 // text label for the x axis
 svg_age.append("text")             
     .attr("transform", "rotate(-90)")
-    .attr("y", -6 - margin.left)
+    .attr("y", 0 - margin.left)
     .attr("x",0 - (height / 2))
     .attr("dy", "1em")
     .style("text-anchor", "middle")
