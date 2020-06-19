@@ -7,8 +7,8 @@ var treeData =
 			"children":[
 				{
 				  "name": "Race",
-          "action": "bar_race.js"
-          //"action": "histo_dynamique.js"
+          //"action": "bar_race.js"
+          "action": "histo_dynamique.js"
 				},
 				{
 				  "name": "Qualities",
@@ -263,7 +263,7 @@ function update(source) {
 					pie_chart("#graphDiv2");
 					break;
 				case "histo_dynamique.js":
-          document.getElementById('graphDiv2').innerHTML += '<p> <label>Choose race</label> <input type="number" min="1" max="6" step="1" value="2" id="nBin"></p>'
+          document.getElementById('graphDiv2').innerHTML += '<p> <label>Choose race</label> <input id="nBin" list="browsers"><datalist id="browsers"><option value="Black/African"><option value="European/Caucasian"> <option value="Latino/Hispanic"><option value="Asian/Pacific"><option value="Native American"><option value="Other"> </datalist></p>'
 					histo_dynamique("#graphDiv2");
 					break;
 				 default:

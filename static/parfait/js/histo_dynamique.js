@@ -46,7 +46,7 @@ function histo_dynamique(item) {
       var histogram = d3.histogram()
         .value(function (d) { return +d['race_o']; })   // I need to give the vector of value
         .domain(x.domain())  // then the domain of the graphic
-        .thresholds(x.ticks(20)); // then the numbers of bins
+        .thresholds(x.ticks(10)); // then the numbers of bins
 
       // And apply this function to data to get the bins
       nBin_string = nBin.toString();
@@ -102,8 +102,57 @@ function histo_dynamique(item) {
 
     // Listen to the button -> update if user change it
     d3.select("#nBin").on("input", function () {
-      update(+this.value);
+      update(transform(this.value));
     });
+
+   function transform(d){
+    if (d == "Black/African"){
+      var val="1"
+      return +val
+    }
+
+    if (d == "European/Caucasian"){
+      var val="2"
+
+      return +val
+
+    }
+
+    if (d == "Latino/Hispanic"){
+      var val="3"
+
+      return +val
+    }
+
+    if (d == "Asian/Pacific"){
+       var val="4"
+
+      return +val
+
+    }
+
+    if (d == "Native American"){
+       var val="5"
+
+      return +val
+
+    }
+
+    if (d == "Other"){
+       var val="6"
+
+      return +val
+
+    }
+
+   }
+
+    svg_dyna.append("text").attr("x", 250).attr("y", 30).text("Black/African=1").style("font-size", "15px").attr("alignment-baseline","middle");
+    svg_dyna.append("text").attr("x", 250).attr("y", 50).text("European/Caucasian=2").style("font-size", "15px").attr("alignment-baseline","middle");
+    svg_dyna.append("text").attr("x", 250).attr("y", 70).text("Latino/Hispanic=3").style("font-size", "15px").attr("alignment-baseline","middle");
+    svg_dyna.append("text").attr("x", 250).attr("y", 90).text("Asian/Pacific=4").style("font-size", "15px").attr("alignment-baseline","middle");
+    svg_dyna.append("text").attr("x", 250).attr("y", 110).text("Native American=5").style("font-size", "15px").attr("alignment-baseline","middle");
+    svg_dyna.append("text").attr("x", 250).attr("y", 130).text("Other=6").style("font-size", "15px").attr("alignment-baseline","middle");
 
   });
 }
