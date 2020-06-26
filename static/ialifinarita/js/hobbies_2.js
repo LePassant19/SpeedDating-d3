@@ -26,7 +26,7 @@ function hobbies(item) {
     }
 
 
-    d3.csv("static/lalifinarita/data/hobbies_matrix.csv", convertNumbers, function(error, data) {
+    d3.csv("static/ialifinarita/data/hobbies_matrix.csv", convertNumbers, function(error, data) {
         var matrix = data;
 
         var names = ["sport", "tv", "exercise", "dining", "museums", "art", "hiking", "gaming", "clubbing", "reading", "tv", "theater", "movies", "concerts", "music", "shopping", "yoga"]
