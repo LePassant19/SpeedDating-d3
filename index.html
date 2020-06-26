@@ -1,129 +1,45 @@
 <html>
-	<!-- <script type="text/javascript" src="/static/d3/d3.js"></script> -->
-	<script src="https://d3js.org/d3.v4.min.js"></script>
-	<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
-	<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3.v4.js"></script>
 
 <head>
-   <h1 align="center"><u> How SpeedDating works?</u></h1>
-
-                        
-                                                
+    <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 </head>
-
-<style>
-
-text {
-  font: 10px sans-serif;
-}
-
-button{
-  font: 10px sans-serif;
-    
-}
-
-rect.background {
-  fill: white;
-  stroke: #646464;
-  stroke-width: 1px;
-  stroke-dasharray: 2,2;
-  stroke-linejoin: round;
-}
-
-.axis {
-  shape-rendering: crispEdges;
-}
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-}
-
-.center-div {
-  margin-left:auto;
-  margin-right:auto;
-  height: 520px;
-  width: 850px;  
-}
-
-.center-div2 {
-  margin-left:auto;
-  margin-right:auto;
-  height: 850px;
-  width: 850px;  
-}
-
-.right-div {
-  margin-left:auto;
-  margin-right:auto;
-  height: 520px;
-  width: 750px;
-  
-}
-
-
-.node circle {
-  fill: #fff;
-  stroke: steelblue;
-  stroke-width: 3px;
-}
-
-.node text {
-  font: 12px sans-serif;
-}
-
-.link {
-  fill: none;
-  stroke: #ccc;
-  stroke-width: 2px;
-}
-
-</style>
 
 
 
 <body>
+    <h1><u> How does Speed Dating work ?</u></h1>
+    <div class="center-div" id="graphDiv" style="border: thin solid black" , align="center">
+        <p><b><i> Menu</b>
+            </i>
+        </p>
+    </div>
 
-  
-<div class="center-div" id="graphDiv" style="border: thin solid black", align="center">
-<p><b><i> Menu</b>                                     
- </i></p>
-</div>
+    <div class="center-div2" id="graphDiv2" style="border: thin solid black" , align="center">
+        <p><b><i> Graphs</b>
+            </i>
+        </p>
+    </div>
 
-<div class="center-div2" id="graphDiv2" style="border: thin solid black", align="center">
-<p><b><i> Graphs</b>                                     
- </i></p>
-</div>
+    <script type="text/javascript" src="static/menu.js"></script>
 
-<script type="text/javascript" src="static/menu.js"></script>
+    <script type="text/javascript" src="static/parfait/js/bar_race.js"></script>
+    <script type="text/javascript" src="static/parfait/js/bar_age.js"></script>
+    <script type="text/javascript" src="static/parfait/js/bar_match.js"></script>
+    <script type="text/javascript" src="static/parfait/js/bar_pro.js"></script>
+    <script type="text/javascript" src="static/parfait/js/histo_dynamique.js"></script>
+    <script type="text/javascript" src="static/parfait/js/pie_motif.js"></script>
 
-<script type="text/javascript" src="static/parfait/js/bar_race.js"></script>
-<script type="text/javascript" src="static/parfait/js/bar_age.js"></script>
-<script type="text/javascript" src="static/parfait/js/bar_match.js"></script>
-<script type="text/javascript" src="static/parfait/js/bar_pro.js"></script>
-<!-- <script type="text/javascript" src="/static/parfait/js/histo.js"></script> -->
-<script type="text/javascript" src="static/parfait/js/histo_dynamique.js"></script> 
-<script type="text/javascript" src="static/parfait/js/pie_motif.js"></script>
+    <script type="text/javascript" src="static/antonin/js/legend.js"></script>
+    <script type="text/javascript" src="static/antonin/js/plots.js"></script>
 
+    <script type="text/javascript" src="static/ialifinarita/js/hobbies_2.js"></script>
 
-<script type="text/javascript" src="static/antonin/Qualities/js/legend.js"></script>
-<script type="text/javascript" src="static/antonin/Qualities/js/plots.js"></script>
-
-<script type="text/javascript" src="static/lalifinarita/js/hobbies_2.js"></script>
-
-<script>
-
-
-
-
-
-
-<!-- d3.json("/get-data", function(error, root) { -->
-	<!-- console.log(root); -->
-<!-- }); -->
-
-</script>
+    <script>
+    </script>
 
 </body>
+
 </html>
