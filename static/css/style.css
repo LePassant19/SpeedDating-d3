@@ -1,0 +1,58 @@
+text {
+    font: 10px sans-serif;
+}
+
+button {
+    font: 10px sans-serif;
+}
+
+h1 {
+    text-align: center
+}
+
+.axis {
+    shape-rendering: crispEdges;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+}
+
+.center-div {
+    margin-left: auto;
+    margin-right: auto;
+    height: 520px;
+    width: 850px;
+}
+
+.center-div2 {
+    margin-left: auto;
+    margin-right: auto;
+    height: 850px;
+    width: 850px;
+}
+
+.right-div {
+    margin-left: auto;
+    margin-right: auto;
+    height: 520px;
+    width: 750px;
+}
+
+.node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 3px;
+}
+
+.node text {
+    font: 12px sans-serif;
+}
+
+.link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 2px;
+}
